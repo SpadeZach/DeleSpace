@@ -13,8 +13,9 @@
     //去掉首尾空格
     content = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
+    NSInteger sign = [content length];
     //遍历字符
-    for (int i = 0; i < [content length]; i++) {
+    for (int i = 0; i < sign; i++) {
         //第一位
         NSString *firstStr = [content substringToIndex:1];
         //第一位 是换行符与空格
@@ -24,9 +25,9 @@
         }
         
     }
-    
+    NSInteger signLast = [content length];
     //遍历字符
-    for (int i = 0; i < [content length]; i++) {
+    for (int i = 0; i < signLast; i++) {
         //最后一位
         NSString *lastStr = [content substringFromIndex:[content length] - 1];
         //最后一位 是换行符与空格
@@ -36,7 +37,7 @@
         }
         
     }
-    
     return content;
 }
+
 @end
